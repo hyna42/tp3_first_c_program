@@ -4,7 +4,7 @@
 Un **Makefile** sert à automatiser la compilation. <br/>
 La structure d'un Makefile est : <br/>
 ```
-cible : dépendace
+cible : dépendaces
     commande
 ```
 
@@ -19,12 +19,12 @@ J'ai commencé par créer un fichier Makefile dans le repo.
 Mon objectif est de "décomposer" la commande de compilation vu précédemment (**[b1_gcc_compil](https://github.com/hyna42/tp3_first_c_program/tree/b1_gcc_compil#)**)
 `gcc -std=c23 -pedantic -Wall -Wextra -Werror main.c -o prog` en des commandes plus "courtes" et facilement maintenables.
 
-Pour cela j'ai commencé par découper la commande en affectant chaque partie à une **VARIABLES** :
+Pour cela j'ai commencé par découper la commande en affectant chaque partie à une **VARIABLE** :
 + **MAIN** = `main.c`
 + **TARGET** = `prog` 
 + **FLAGS** = `-std=c23 -pedantic -Wall -Wextra -Werror`
 
-Ensuite, suivant mes besoins j'ai défini les 3 commandes suivantes : 
+Ensuite, suivant mes besoins j'ai défini les 3 commandes suivantes dans le Makefile: 
 
 1. Une première commande que je nomme ***prog*** qui va compiler le fichier `main.c` en binaire exécutable : 
     ```
